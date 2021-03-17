@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding Quiz!</title>
-    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/styles.css">
 </head>
   <body>
-    <div class="container">
-      <div id="home" class ="first-screen">
+    <div class="container" id="hide">
+      <div class ="first-screen">
         <h1>Test Your Coding Knowledge!</h1>
         <h2>How to Play: </h2>
         <p>Try to answer the following coding questions within the time limit. 
@@ -18,10 +18,11 @@
             you're ready.
         </p>
         <div class="flex-btn">
-          <button class="btn" id="start-quiz">Start Quiz</button>
-          <a href ="highscores.html" class="btn">High Scores</a>
+            <button class="btn" id="start">Start Quiz</button>
+            <a href ="highscores.html" class="btn" id="highscores">High Scores</a>
         </div>
       </div>
     </div>
+    <script src="assets/quiz.js"></script>
   </body>
 </html>
