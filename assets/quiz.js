@@ -8,10 +8,10 @@ var questions = [
     {
       question: "<h1>What is the largest Heading Tag in HTML?</h1>",
       answers: [
-          {text: "<button>H12</button>", correct: false},
-          {text: "H6", correct: false},
-          {text: "H1", correct: true},
-          {text: "H8", correct: false}
+          { text: "H12", correct: false },
+          { text: "H6", correct: false },
+          { text: "H1", correct: true },
+          { text: "H8", correct: false }
       ]
     }
 ]
@@ -24,15 +24,28 @@ var startGame = function () {
     nextQuestion()
 }
 
-
 var nextQuestion = function () {
     showQuestions(displayedQuestions[questionIndex]) 
 }
 
 var showQuestions = function (question) {
     shownQuestions.innerHTML = question.question
+    question.answers.forEach(answer => {
+        var button = document.createElement ("button")
+        button.innerText = answer.text
+        button.setAttribute("class", "btn")
+        if (answer.correct) {
+            button.dataset.correct = choice.correct
+        }
+        button.addEventListener("click", answerChoice)
+        ansOptions.appendChild(button)
+    })
 }
+    
 
+var answerChoice = function (event) {
+
+}
 
 
 
