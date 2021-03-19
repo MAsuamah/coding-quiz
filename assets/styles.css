@@ -69,3 +69,11 @@ h3 {
     text-align: center;
     padding-top: 30px;
 }
+
+#right {
+    color: green;
+}
+
+#wrong {
+    color: red
+}
