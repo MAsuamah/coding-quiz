@@ -64,3 +64,8 @@ a {
 .hide {
     display: none;
 }
+
+h3 {
+    text-align: center;
+    padding-top: 30px;
+}

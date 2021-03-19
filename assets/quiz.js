@@ -3,6 +3,8 @@ var homeScreen = document.querySelector("#home")
 var questionScreen = document.querySelector(".questions")
 var shownQuestions = document.querySelector("#question")
 var ansOptions = document.querySelector("#choices")
+var correctMessage = document.querySelector("#right")
+var incorrectMessage = document.querySelector("#wrong")
 var displayedQuestions, questionIndex
 var questions = [
     {
@@ -142,11 +144,16 @@ var reset = function () {
 var answerChoice = function (event) {
     var selectedButton = event.target
     var correct = selectedButton.dataset.correct
+        if (correct) {
+            correctMessage.removeAttribute("class", "hide")
+        } else {
+            incorrectMessage.removeAttribute("class", "hide")
+        }
 
+
+    questionIndex ++
+    nextQuestion ()
 }
-
-
-
 
 
 startQuiz.addEventListener("click", startGame);
