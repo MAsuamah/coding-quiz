@@ -139,22 +139,37 @@ var reset = function () {
     while (ansOptions.firstChild) {
         ansOptions.removeChild(ansOptions.firstChild)
     }
+
 }
 
 var answerChoice = function (event) {
     var selectedButton = event.target
     var correct = selectedButton.dataset.correct
-        if (correct) {
-            correctMessage.removeAttribute("class", "hide")
-        } else {
-            incorrectMessage.removeAttribute("class", "hide")
-        }
+    displayMessage (correctMessage, incorrectMessage, correct)
 
+//Timer subtract function
 
     questionIndex ++
     nextQuestion ()
 }
 
+//Add Correct alert
+
+var displayMessage = function (correctMessage, incorrectMessage, correct) {
+    clearDisplayMessage(correctMessage, incorrectMessage) 
+    if (correct) {
+        correctMessage.removeAttribute("class", "hide")
+    } else {
+        incorrectMessage.removeAttribute("class", "hide")
+    } 
+}
+
+//Clear correct alert
+
+var clearDisplayMessage = function (correctMessage, incorrectMessage) {
+    correctMessage.setAttribute("class", "hide")
+    incorrectMessage.setAttribute("class", "hide")
+}
 
 startQuiz.addEventListener("click", startGame);
 
