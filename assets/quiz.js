@@ -105,7 +105,7 @@ var questions = [
             { text: "listEl.appendChild(li1)", correct: true },
             { text: "None of the above", correct: false }
         ]  
-      },
+      }
 ]
 
 var startGame = function () {
@@ -146,6 +146,9 @@ var answerChoice = function (event) {
     var selectedButton = event.target
     var correct = selectedButton.dataset.correct
     displayMessage (correctMessage, incorrectMessage, correct)
+    if (displayedQuestions.length > questionIndex + 1) {
+        
+    }
 
 //Timer subtract function
 

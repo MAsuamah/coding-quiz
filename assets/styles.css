@@ -77,3 +77,27 @@ h3 {
 #wrong {
     color: red
 }
+
+#end {
+    text-align: center;
+    
+}
+
+#end p {
+    padding-bottom: 15px;
+}
+
+#endbtn {
+    display: flex;
+    justify-content: center;
+}
+
+input[type=text] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
