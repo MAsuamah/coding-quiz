@@ -106,16 +106,6 @@ var questions = [
             { text: "listEl.appendChild(li1)", correct: true },
             { text: "None of the above", correct: false }
         ]  
-      },
-
-      {
-        question: "",
-        answers: [
-            { text: "document.body", correct: false },
-            { text: "document.getElementById('myBtn').addEventListener('click', displayMessage)", correct: false },
-            { text: "listEl.appendChild(li1)", correct: true },
-            { text: "None of the above", correct: false }
-        ]  
       }
 
  
@@ -163,6 +153,7 @@ var answerChoice = function (event) {
         displayMessage (correctMessage, incorrectMessage, correct)
     } else {
         clearDisplayMessage(correctMessage, incorrectMessage)
+        questionScreen.setAttribute("class", "hide")
         endScreen.removeAttribute("class", "hide")
     }
     questionIndex ++
