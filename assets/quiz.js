@@ -83,22 +83,22 @@ var questions = [
       },
 
       {
-        question: "<h1>The CSS box model is compromised of</h1>",
-        answers: [
-            { text: "Border, flex box, content, padding", correct: false },
-            { text: "Margin, content, padding, border", correct: true },
-            { text: "Margin, float, content, flex box", correct: false },
-            { text: "Float, flex box, content, border", correct: false }
-        ]  
-      },
-
-      {
         question: "<h1>for (i = 0; i < 7; i++) {Console.log(“I love coding”)} is an example of</h1>",
         answers: [
             { text: "A loop", correct: false },
             { text: "An iteration", correct: false },
             { text: "A for statement", correct: false },
             { text: "All of the above", correct: true }
+        ]  
+      },
+
+      {
+        question: "<h1>The CSS box model is compromised of</h1>",
+        answers: [
+            { text: "Border, flex box, content, padding", correct: false },
+            { text: "Margin, content, padding, border", correct: true },
+            { text: "Margin, float, content, flex box", correct: false },
+            { text: "Float, flex box, content, border", correct: false }
         ]  
       },
 
@@ -200,10 +200,9 @@ var countdown = function () {
       }, 1000)
 }
 
-var finalScore = function() {
-    var score = timeLeft
-    highScore.innerHTML = "Your final score is " + score
-}  
+
+
+
 
 
 
