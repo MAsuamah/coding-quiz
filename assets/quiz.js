@@ -107,8 +107,6 @@ var questions = [
             { text: "None of the above", correct: false }
         ]  
       }
-
- 
 ]
 
 var startGame = function () {
@@ -125,6 +123,7 @@ var nextQuestion = function () {
 }
 
 var showQuestions = function (question) {
+    //Start time function
     shownQuestions.innerHTML = question.question
     question.answers.forEach(answer => {
         var button = document.createElement ("button")
@@ -168,6 +167,7 @@ var displayMessage = function (correctMessage, incorrectMessage, correct) {
         correctMessage.removeAttribute("class", "hide")
     } else {
         incorrectMessage.removeAttribute("class", "hide")
+        //Subtact time function
     } 
 }
 
@@ -177,6 +177,12 @@ var clearDisplayMessage = function (correctMessage, incorrectMessage) {
     correctMessage.setAttribute("class", "hide")
     incorrectMessage.setAttribute("class", "hide")
 }
+
+var countdown = function () {
+    var timeLeft = 100;
+}
+
+//Create a subtract time function, [start time functiona and  end game function]
 
 
 

@@ -101,3 +101,7 @@ input[type=text] {
     border-radius: 4px;
     box-sizing: border-box;
 }
+
+#timer {
+    text-align: center;
+}
