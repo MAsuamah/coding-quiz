@@ -6,6 +6,7 @@ var ansOptions = document.querySelector("#choices")
 var correctMessage = document.querySelector("#right")
 var incorrectMessage = document.querySelector("#wrong")
 var endScreen = document.querySelector("#end")
+var timerEL = document.querySelector("#timer")
 var displayedQuestions, questionIndex
 var questions = [
     {
@@ -114,6 +115,7 @@ var startGame = function () {
     displayedQuestions = questions
     questionIndex = 0
     questionScreen.removeAttribute("class", "hide")
+    countdown()
     nextQuestion()
 }
 
@@ -179,7 +181,17 @@ var clearDisplayMessage = function (correctMessage, incorrectMessage) {
 }
 
 var countdown = function () {
-    var timeLeft = 100;
+    var timeLeft = 50
+    timerEL = timer
+
+    var timeInterval = setInterval(function() {
+        if (timeLeft > 1) {
+          timer.textContent = "Time:" + timeLeft
+          timeLeft--;
+        } else {
+            clearInterval(timeInterval);
+        }
+      }, 1000);
 }
 
 //Create a subtract time function, [start time functiona and  end game function]
