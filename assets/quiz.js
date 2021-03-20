@@ -7,6 +7,7 @@ var correctMessage = document.querySelector("#right")
 var incorrectMessage = document.querySelector("#wrong")
 var endScreen = document.querySelector("#end")
 var timerEL = document.querySelector("#timer")
+var timeLeft = 100
 var displayedQuestions, questionIndex
 var questions = [
     {
@@ -115,7 +116,6 @@ var startGame = function () {
     displayedQuestions = questions
     questionIndex = 0
     questionScreen.removeAttribute("class", "hide")
-    countdown()
     nextQuestion()
 }
 
@@ -169,7 +169,7 @@ var displayMessage = function (correctMessage, incorrectMessage, correct) {
         correctMessage.removeAttribute("class", "hide")
     } else {
         incorrectMessage.removeAttribute("class", "hide")
-        //Subtact time function
+        timeLeft -= 10
     } 
 }
 
@@ -181,25 +181,26 @@ var clearDisplayMessage = function (correctMessage, incorrectMessage) {
 }
 
 var countdown = function () {
-    var timeLeft = 50
     timerEL = timer
 
     var timeInterval = setInterval(function() {
-        if (timeLeft > 1) {
+        if (timeLeft >= 0) {
           timer.textContent = "Time:" + timeLeft
           timeLeft--;
         } else {
-            clearInterval(timeInterval);
+            clearInterval(timeInterval)
+            clearDisplayMessage(correctMessage, incorrectMessage)
+            questionScreen.setAttribute("class", "hide")
+            endScreen.removeAttribute("class", "hide")
         }
-      }, 1000);
+      }, 1000)
 }
-
-//Create a subtract time function, [start time functiona and  end game function]
-
-
 
 
 startQuiz.addEventListener("click", startGame);
+startQuiz.addEventListener("click", countdown);
+
+
 
 
 
