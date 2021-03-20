@@ -6,8 +6,9 @@ var ansOptions = document.querySelector("#choices")
 var correctMessage = document.querySelector("#right")
 var incorrectMessage = document.querySelector("#wrong")
 var endScreen = document.querySelector("#end")
+var highScore = document.querySelector("#score")
 var timerEL = document.querySelector("#timer")
-var timeLeft = 100
+var timeLeft = 70
 var displayedQuestions, questionIndex
 var questions = [
     {
@@ -23,20 +24,21 @@ var questions = [
     {
       question: "<h1>What symbol is added to most HTML closing tags?</h1>",
       answers: [
-          {text: "/", correct: true},
           {text: "*", correct: false},
           {text: ")", correct: false},
-          {text: "]", correct: false}
+          {text: "]", correct: false},
+          {text: "/", correct: true}
       ]  
     },
 
     {
       question: "<h1>/eggs/bacon/tomatoes.png is an example of...?</h1>",
       answers: [
+         {text: "A sandwich path", correct: false},
          {text: "A relative path", correct: true},
          {text: "An absolute path", correct: false},
-         {text: "A URL", correct: false},
-         {text: "A sandwich path", correct: false}
+         {text: "A URL", correct: false}
+         
       ]  
     },
 
@@ -53,18 +55,18 @@ var questions = [
       {
         question: "<h1>Cd in the command line stands for what?</h1>",
         answers: [
-            { text: "Change directory", correct: true },
             { text: "Compact disk", correct: false },
             { text: "Command discharge", correct: false },
-            { text: "Computer database", correct: false }
+            { text: "Computer database", correct: false },
+            { text: "Change directory", correct: true }
         ]  
       },
 
       {
         question: "<h1>What does git checkout do?</h1>",
-        answers: [
-            { text: "Switches the git branch", correct: true },
+        answers: [ 
             { text: "Checks git status", correct: false },
+            { text: "Switches the git branch", correct: true },
             { text: "Merges git branches", correct: false },
             { text: "Updates your repository", correct: false }
         ]  
@@ -83,8 +85,8 @@ var questions = [
       {
         question: "<h1>The CSS box model is compromised of</h1>",
         answers: [
-            { text: "Margin, content, padding, border", correct: true },
             { text: "Border, flex box, content, padding", correct: false },
+            { text: "Margin, content, padding, border", correct: true },
             { text: "Margin, float, content, flex box", correct: false },
             { text: "Float, flex box, content, border", correct: false }
         ]  
@@ -156,6 +158,7 @@ var answerChoice = function (event) {
         clearDisplayMessage(correctMessage, incorrectMessage)
         questionScreen.setAttribute("class", "hide")
         endScreen.removeAttribute("class", "hide")
+        finalScore()
     }
     questionIndex ++
     nextQuestion ()
@@ -184,17 +187,24 @@ var countdown = function () {
     timerEL = timer
 
     var timeInterval = setInterval(function() {
-        if (timeLeft >= 0) {
+        if (timeLeft > 0) {
           timer.textContent = "Time:" + timeLeft
           timeLeft--;
         } else {
             clearInterval(timeInterval)
             clearDisplayMessage(correctMessage, incorrectMessage)
             questionScreen.setAttribute("class", "hide")
-            endScreen.removeAttribute("class", "hide")
+            endScreen.removeAttribute("class", "hide") 
+            finalScore()  
         }
       }, 1000)
 }
+
+var finalScore = function() {
+    var score = timeLeft
+    highScore.innerHTML = "Your final score is " + score
+}  
+
 
 
 startQuiz.addEventListener("click", startGame);
