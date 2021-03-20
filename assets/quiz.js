@@ -188,7 +188,7 @@ var countdown = function () {
     timerEL = timer
 
     var timeInterval = setInterval(function() {
-        if (timeLeft > 0) {
+        if (timeLeft > 0 && endScreen.hasAttribute("class", "hide")) {
           timer.textContent = "Time:" + timeLeft
           timeLeft--;
         } else {
@@ -198,12 +198,12 @@ var countdown = function () {
             endScreen.removeAttribute("class", "hide") 
             finalScore()  
         }
-
       }, 1000)
 }
 
 var finalScore = function() {
-    highScore.innerHTML = "Your final score is " + timeLeft
+    var score = timeLeft
+    highScore.innerHTML = "Your final score is " + score
 }
 
 
