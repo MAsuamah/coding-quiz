@@ -8,6 +8,7 @@ var incorrectMessage = document.querySelector("#wrong")
 var endScreen = document.querySelector("#end")
 var highScore = document.querySelector("#score")
 var timerEL = document.querySelector("#timer")
+var submitScore = document.querySelector("#submit")
 var timeLeft = 70
 var displayedQuestions, questionIndex
 var questions = [
@@ -197,17 +198,21 @@ var countdown = function () {
             endScreen.removeAttribute("class", "hide") 
             finalScore()  
         }
+
       }, 1000)
+}
+
+var finalScore = function() {
+    highScore.innerHTML = "Your final score is " + timeLeft
 }
 
 
 
 
 
+startQuiz.addEventListener("click", startGame)
+startQuiz.addEventListener("click", countdown)
 
-
-startQuiz.addEventListener("click", startGame);
-startQuiz.addEventListener("click", countdown);
 
 
 
