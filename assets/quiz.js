@@ -5,6 +5,7 @@ var shownQuestions = document.querySelector("#question")
 var ansOptions = document.querySelector("#choices")
 var correctMessage = document.querySelector("#right")
 var incorrectMessage = document.querySelector("#wrong")
+var endScreen = document.querySelector("#end")
 var displayedQuestions, questionIndex
 var questions = [
     {
@@ -105,7 +106,19 @@ var questions = [
             { text: "listEl.appendChild(li1)", correct: true },
             { text: "None of the above", correct: false }
         ]  
+      },
+
+      {
+        question: "",
+        answers: [
+            { text: "document.body", correct: false },
+            { text: "document.getElementById('myBtn').addEventListener('click', displayMessage)", correct: false },
+            { text: "listEl.appendChild(li1)", correct: true },
+            { text: "None of the above", correct: false }
+        ]  
       }
+
+ 
 ]
 
 var startGame = function () {
@@ -132,6 +145,7 @@ var showQuestions = function (question) {
         }
         button.addEventListener("click", answerChoice)
         ansOptions.appendChild(button)
+
     })
 }
     
@@ -145,13 +159,12 @@ var reset = function () {
 var answerChoice = function (event) {
     var selectedButton = event.target
     var correct = selectedButton.dataset.correct
-    displayMessage (correctMessage, incorrectMessage, correct)
     if (displayedQuestions.length > questionIndex + 1) {
-        
+        displayMessage (correctMessage, incorrectMessage, correct)
+    } else {
+        clearDisplayMessage(correctMessage, incorrectMessage)
+        endScreen.removeAttribute("class", "hide")
     }
-
-//Timer subtract function
-
     questionIndex ++
     nextQuestion ()
 }
@@ -174,7 +187,12 @@ var clearDisplayMessage = function (correctMessage, incorrectMessage) {
     incorrectMessage.setAttribute("class", "hide")
 }
 
+
+
+
 startQuiz.addEventListener("click", startGame);
+
+
 
 
 
