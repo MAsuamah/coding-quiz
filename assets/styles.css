@@ -79,8 +79,7 @@ h3 {
 }
 
 #end {
-    text-align: center;
-    
+    text-align: center; 
 }
 
 #end p {
@@ -110,7 +109,6 @@ form{
     justify-content: center;
     width: 30%;
     margin: 0 auto;
-
 }
 
 #highscorebtn {
