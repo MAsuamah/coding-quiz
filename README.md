@@ -5,7 +5,7 @@ Test your coding knowledge with this timed multiple choice coding quiz!
 
 ## How to Play
 * Read the instructions on the homepage and click start quiz when you're ready.
-* You will be presented with a series of questions the timer will be displayed at the bottom of the screen.
+* You will be presented with a series of questions. The timer will be displayed at the bottom of the screen.
 * Answer a question correctly and be presented with a correct message at the bottom of the screen.
 * Answer a question incorrectly and be presented with an incorrect message at the bottom of the screen. 
 You will also lose 10 seconds off of your clock.
