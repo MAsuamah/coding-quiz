@@ -123,3 +123,8 @@ form{
 li {
     list-style: none;
 }
+
+#score {
+    font-size: 30px;
+    padding-bottom: 10px;
+}
