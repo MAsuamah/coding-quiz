@@ -9,6 +9,7 @@ var endScreen = document.querySelector("#end")
 var highScore = document.querySelector("#score")
 var timerEL = document.querySelector("#timer")
 var submitScore = document.querySelector("#submit")
+var userName = document.querySelector("#player")
 var timeLeft = 70
 var displayedQuestions, questionIndex
 var questions = [
@@ -195,23 +196,25 @@ var countdown = function () {
             clearInterval(timeInterval)
             clearDisplayMessage(correctMessage, incorrectMessage)
             questionScreen.setAttribute("class", "hide")
-            endScreen.removeAttribute("class", "hide") 
-            finalScore()  
+            endScreen.removeAttribute("class", "hide")
+            finalScore() 
         }
       }, 1000)
+
 }
+
 
 var finalScore = function() {
-    var score = timeLeft
-    highScore.innerHTML = "Your final score is " + score
+    highScore.innerHTML = "Your final score is " + timeLeft
+    localstorage.setItem("score", timeLeft)
 }
-
-
+    
 
 
 
 startQuiz.addEventListener("click", startGame)
 startQuiz.addEventListener("click", countdown)
+
 
 
 
