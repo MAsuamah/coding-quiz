@@ -2,7 +2,6 @@ var username = document.querySelector("#username")
 var saveScoreBtn = document.querySelector("#saveScoreBtn");
 var highScore = document.querySelector("#score");
 var mostRecentScore = localStorage.getItem("mostRecentScore");
-
 var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
 var maxHighScores = 5
@@ -14,12 +13,12 @@ saveHighScore = e => {
   console.log("clicked!")
   e.preventDefault()
 
-  var scores = {
+  var score = {
     score: mostRecentScore,
     name: username.value
   }
 
-  highScores.push(scores)
+  highScores.push(score)
 
   highScores.sort((a,b) => b.score - a.score)
 
@@ -28,6 +27,7 @@ saveHighScore = e => {
   localStorage.setItem("highScores", JSON.stringify(highScores))
 
 }
+
 
 
 
