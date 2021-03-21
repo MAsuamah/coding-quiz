@@ -15,7 +15,9 @@ body {
     flex-direction: column; 
     justify-content: center;
     min-height: 100vh;
-  }
+    background-image: linear-gradient(to bottom right, rgb(107, 227, 235), white);
+
+}
 
 .container {
     display: flex;
@@ -59,7 +61,6 @@ a {
 .btn:hover {
     opacity: 50%;
 }
-
 
 .hide {
     display: none;

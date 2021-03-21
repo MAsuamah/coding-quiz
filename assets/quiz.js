@@ -46,7 +46,7 @@ var questions = [
     },
 
     {
-        question: "<h1>A boolean data type is?</h2>",
+        question: "<h1>A boolean data type is?</h1>",
         answers: [
             { text: "True", correct: false },
             { text: "False", correct: false },
@@ -96,7 +96,7 @@ var questions = [
       },
 
       {
-        question: "<h1>The CSS box model is compromised of</h1>",
+        question: "<h1>The CSS box model is compromised of...</h1>",
         answers: [
             { text: "Border, flex box, content, padding", correct: false },
             { text: "Margin, content, padding, border", correct: true },
@@ -116,7 +116,7 @@ var questions = [
       }
 ]
 
-//Clicking the Start Quiz button will hide the home sceen and reveal the questions to be asked by adding removing display none style
+//Clicking the Start Quiz button will hide the home screen and reveal the questions to be asked by adding removing display: none style
 var startGame = function () {
     homeScreen.setAttribute("class", "hide")
     displayedQuestions = questions
@@ -125,13 +125,13 @@ var startGame = function () {
     nextQuestion()
 }
 
-//Questions wil be come one after another in the order of the array
+//Questions will come one after another in the order of the array
 var nextQuestion = function () {
     reset()
     showQuestions(displayedQuestions[questionIndex]) 
 }
 
-//Questions be printed to the question div in the index.html using inner.HTML
+//Questions will be printed to the question div in the index.html using inner.HTML
 //A new button will be created for each answer choice ft. answer.text from the questions array...by way of a for each loop
 var showQuestions = function (question) {
     shownQuestions.innerHTML = question.question
@@ -148,7 +148,7 @@ var showQuestions = function (question) {
     })
 }
     
-//The reset function will remove the appended answer options from the previous question so there are now extra options when the nect questionb is up
+//The reset function will remove the appended answer options from the previous question so there are no extra options when the next question is up
 var reset = function () {
     while (ansOptions.firstChild) {
         ansOptions.removeChild(ansOptions.firstChild)
@@ -156,7 +156,7 @@ var reset = function () {
 
 }
 
-//This function will check if the answer is correct and will display the appropiate message. If there are no more questions the display message and question screen will be hidden, and the end screen revealed...or else move up the quesions array.
+//This function will check if the answer is correct and will display the appropriate message. If there are no more questions the display message and question screen will be hidden, and the end screen revealed...or else move up the questions array.
 var answerChoice = function (event) {
     var selectedButton = event.target
     var correct = selectedButton.dataset.correct
@@ -172,7 +172,7 @@ var answerChoice = function (event) {
     nextQuestion ()
 }
 
-//displayMessage will print correct or incorrect according to the answer selected. If incorrect it will also subtract 10 seconds from timeleft.
+//displayMessage will print correct or incorrect according to the answer selected. If incorrect it will also subtract 10 seconds from timeLeft.
 var displayMessage = function (correctMessage, incorrectMessage, correct) {
     clearDisplayMessage(correctMessage, incorrectMessage) 
     if (correct) {
