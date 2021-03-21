@@ -6,10 +6,8 @@ var ansOptions = document.querySelector("#choices")
 var correctMessage = document.querySelector("#right")
 var incorrectMessage = document.querySelector("#wrong")
 var endScreen = document.querySelector("#end")
-var highScore = document.querySelector("#score")
 var timerEL = document.querySelector("#timer")
-var submitScore = document.querySelector("#submit")
-var userName = document.querySelector("#player")
+
 var timeLeft = 70
 var displayedQuestions, questionIndex
 var questions = [
@@ -160,7 +158,7 @@ var answerChoice = function (event) {
         clearDisplayMessage(correctMessage, incorrectMessage)
         questionScreen.setAttribute("class", "hide")
         endScreen.removeAttribute("class", "hide")
-        finalScore()
+        
     }
     questionIndex ++
     nextQuestion ()
@@ -192,22 +190,21 @@ var countdown = function () {
         if (timeLeft > 0 && endScreen.hasAttribute("class", "hide")) {
           timer.textContent = "Time:" + timeLeft
           timeLeft--;
+
         } else {
             clearInterval(timeInterval)
             clearDisplayMessage(correctMessage, incorrectMessage)
             questionScreen.setAttribute("class", "hide")
             endScreen.removeAttribute("class", "hide")
-            finalScore() 
+            localStorage.setItem("mostRecentScore", timeLeft)
+            
         }
       }, 1000)
 
 }
 
 
-var finalScore = function() {
-    highScore.innerHTML = "Your final score is " + timeLeft
-    localstorage.setItem("score", timeLeft)
-}
+
     
 
 

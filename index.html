@@ -50,14 +50,25 @@
       <h1>All Done</h1>
       <div id="score">
       </div>
-        <p>Enter your initials and click submit to see where you rank!</p>    
-      <input type="text" name="player" id="player" placeholder="Enter Initials" />
+        <p>Enter your initials and click submit to see where you rank!</p> 
 
-      <form action="highscores.html" >
-        <div id="endbtn">
-          <button class="btn" type="submit" id="submit">Submit</button>
-        </div>
+      <form>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Enter Initials"
+          />
+          <button 
+          class="btn" 
+          type="submit" 
+          id="saveScoreBtn"
+          onclick="saveHighScore(event)">
+            Save
+          </button>
       </form> 
+
+      <a class="btn" id=highscorebtn href="highscores.html">High Scores</a>
     </div>
     
     <script src="assets/quiz.js"></script>

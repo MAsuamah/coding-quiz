@@ -93,10 +93,8 @@ h3 {
 }
 
 input[type=text] {
-    width: 30%;
     padding: 12px 20px;
     margin: 8px 0;
-    display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -104,4 +102,21 @@ input[type=text] {
 
 #timer {
     text-align: center;
+}
+
+form{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    width: 30%;
+    margin: 0 auto;
+
+}
+
+#highscorebtn {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 20px;
 }
