@@ -189,25 +189,21 @@ var clearDisplayMessage = function (correctMessage, incorrectMessage) {
     incorrectMessage.setAttribute("class", "hide")
 }
 
-//Timer function 
+//Timer function + save stopped timer as score in local storage
 var countdown = function () {
     timerEL = timer
-
     var timeInterval = setInterval(function() {
         if (timeLeft > 0 && endScreen.hasAttribute("class", "hide")) {
           timer.textContent = "Time:" + timeLeft
           timeLeft--;
-
         } else {
             clearInterval(timeInterval)
             clearDisplayMessage(correctMessage, incorrectMessage)
             questionScreen.setAttribute("class", "hide")
             endScreen.removeAttribute("class", "hide")
-            localStorage.setItem("mostRecentScore", timeLeft)
-            
+            localStorage.setItem("mostRecentScore", timeLeft)  
         }
       }, 1000)
-
 }
 
 startQuiz.addEventListener("click", startGame)
