@@ -8,7 +8,7 @@ Test your coding knowledge with this timed multiple choice coding quiz!
 * You will be presented with a series of questions. The timer will be displayed at the bottom of the screen.
 * Answer a question correctly and be presented with a correct message at the bottom of the screen.
 * Answer a question incorrectly and be presented with an incorrect message at the bottom of the screen. 
-You will also lose 10 seconds off of your clock.
+You will also lose 10 seconds off your clock.
 * After you answer each question the next question will appear until you reach the end or the clock runs out.
 * When you are finished with the questions or the clock runs out, you will be presented with the 
 end screen. You will be prompted to enter your initials and click the save button to see your score.
