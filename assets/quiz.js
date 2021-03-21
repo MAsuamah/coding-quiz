@@ -1,3 +1,5 @@
+//Reference https://www.youtube.com/watch?v=riDzcEQbX6k&t=1s&ab_channel=WebDevSimplified
+
 var startQuiz = document.querySelector("#start")
 var homeScreen = document.querySelector("#home")
 var questionScreen = document.querySelector(".questions")
@@ -7,9 +9,10 @@ var correctMessage = document.querySelector("#right")
 var incorrectMessage = document.querySelector("#wrong")
 var endScreen = document.querySelector("#end")
 var timerEL = document.querySelector("#timer")
-
 var timeLeft = 70
 var displayedQuestions, questionIndex
+
+//Array of questions that will be asked
 var questions = [
     {
       question: "<h1>What is the largest Heading Tag in HTML?</h1>",
@@ -113,6 +116,7 @@ var questions = [
       }
 ]
 
+//Clicking the Start Quiz button will hide the home sceen and reveal the questions to be asked by adding removing display none style
 var startGame = function () {
     homeScreen.setAttribute("class", "hide")
     displayedQuestions = questions
@@ -121,13 +125,15 @@ var startGame = function () {
     nextQuestion()
 }
 
+//Questions wil be come one after another in the order of the array
 var nextQuestion = function () {
     reset()
     showQuestions(displayedQuestions[questionIndex]) 
 }
 
+//Questions be printed to the question div in the index.html using inner.HTML
+//A new button will be created for each answer choice ft. answer.text from the questions array...by way of a for each loop
 var showQuestions = function (question) {
-    //Start time function
     shownQuestions.innerHTML = question.question
     question.answers.forEach(answer => {
         var button = document.createElement ("button")
@@ -142,6 +148,7 @@ var showQuestions = function (question) {
     })
 }
     
+//The reset function will remove the appended answer options from the previous question so there are now extra options when the nect questionb is up
 var reset = function () {
     while (ansOptions.firstChild) {
         ansOptions.removeChild(ansOptions.firstChild)
@@ -149,6 +156,7 @@ var reset = function () {
 
 }
 
+//This function will check if the answer is correct and will display the appropiate message. If there are no more questions the display message and question screen will be hidden, and the end screen revealed...or else move up the quesions array.
 var answerChoice = function (event) {
     var selectedButton = event.target
     var correct = selectedButton.dataset.correct
@@ -164,8 +172,7 @@ var answerChoice = function (event) {
     nextQuestion ()
 }
 
-//Add Correct alert
-
+//displayMessage will print correct or incorrect according to the answer selected. If incorrect it will also subtract 10 seconds from timeleft.
 var displayMessage = function (correctMessage, incorrectMessage, correct) {
     clearDisplayMessage(correctMessage, incorrectMessage) 
     if (correct) {
@@ -176,13 +183,13 @@ var displayMessage = function (correctMessage, incorrectMessage, correct) {
     } 
 }
 
-//Clear correct alert
-
+//This will clear previous message displays so the message is only printed once on the screen
 var clearDisplayMessage = function (correctMessage, incorrectMessage) {
     correctMessage.setAttribute("class", "hide")
     incorrectMessage.setAttribute("class", "hide")
 }
 
+//Timer function 
 var countdown = function () {
     timerEL = timer
 
@@ -202,12 +209,6 @@ var countdown = function () {
       }, 1000)
 
 }
-
-
-
-    
-
-
 
 startQuiz.addEventListener("click", startGame)
 startQuiz.addEventListener("click", countdown)
