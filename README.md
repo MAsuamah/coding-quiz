@@ -11,7 +11,7 @@ Test your coding knowledge with this timed multiple choice coding quiz!
 You will also lose 10 seconds off of your clock.
 * After you answer each question the next question will appear until you reach the end or the clock runs out.
 * When you are finished with the questions or the clock runs out, you will be presented with the 
-end page and will be prompted to enter your initials and click the save to see your score.
+end screen. You will be prompted to enter your initials and click the save button to see your score.
 * After that you may click the high scores button and see the top five high scores.
 * From the high scores page you may click go home and start the quiz all over again.
 
