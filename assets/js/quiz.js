@@ -144,7 +144,6 @@ var showQuestions = function (question) {
         }
         button.addEventListener("click", answerChoice)
         ansOptions.appendChild(button)
-
     })
 }
     
@@ -153,7 +152,6 @@ var reset = function () {
     while (ansOptions.firstChild) {
         ansOptions.removeChild(ansOptions.firstChild)
     }
-
 }
 
 //This function will check if the answer is correct and will display the appropriate message. If there are no more questions the display message and question screen will be hidden, and the end screen revealed...or else move up the questions array.
@@ -166,7 +164,6 @@ var answerChoice = function (event) {
         clearDisplayMessage(correctMessage, incorrectMessage)
         questionScreen.setAttribute("class", "hide")
         endScreen.removeAttribute("class", "hide")
-        
     }
     questionIndex ++
     nextQuestion ()
